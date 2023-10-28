@@ -3,7 +3,7 @@
 
 ###  Setup
 
-1. open the terminal and clone the project 
+1. open the terminal and clone the project then run "npm i"
 
 2. run `docker-compose up` in the root directory
 
