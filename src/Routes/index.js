@@ -3,14 +3,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const users = require("./users")
+const pokemons = require("./pokemon/pokemon")
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'hello Root',
-  });
-});
-
-router.use('/user',users );
+router.use('/pokemon',pokemons );
 
 module.exports = router;

@@ -2,10 +2,17 @@
 const {start} = require('./server') ;
 const {db} = require('./models/index')
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 
 start(port)
 
-// db.sync().then(()=>{
-// }).catch(console.error)
+
+
+db.sync().then(()=>{
+}).catch(console.error)
+
+
+
+
+

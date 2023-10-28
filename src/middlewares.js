@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function notFound(req, res, next) {
   res.status(404);
   const error = new Error('Route is Not Found');

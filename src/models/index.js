@@ -1,7 +1,7 @@
 /* eslint-disable */
 const { Sequelize , DataTypes} = require('sequelize');
 
-const Users = require('./users.model')
+const Pokemon = require('./pokemon.model')
 
 var config
 
@@ -23,16 +23,16 @@ if (process.env.DATABASE_URL) {
 }
 
 const db = new Sequelize(
-    process.env.DATABASE_URL ||
-    'postgres://postgres:1234@127.0.0.1:5432/whiteboardbackup',
-    config 
+    process.env.DATABASE_URL ,
+    {
+      logging: false,
+    } 
   )
 
-  const UsersDB = Users(db, DataTypes);
+  const PokemonDB = Pokemon(db, DataTypes);
 
 
 module.exports ={
     db : db,
-    UsersDB
-   
+    PokemonDB  
 }

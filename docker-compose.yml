@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: my-postgres-db
+    environment:
+      POSTGRES_DB: myappdb
+      POSTGRES_USER: myappuser
+      POSTGRES_PASSWORD: myapppassword
+    ports:
+      - "5432:5432" 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pokemoin
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080" 

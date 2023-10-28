@@ -1,11 +1,12 @@
-const express = require('express');
-const helmet = require('helmet');
-const cors = require('cors');
+/* eslint-disable*/
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
 
-require('dotenv').config();
+require("dotenv").config();
 
-const middlewares = require('./middlewares');
-const routes = require('./Routes');
+const middlewares = require("./middlewares");
+const routes = require("./Routes");
 
 const app = express();
 
@@ -13,13 +14,13 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({
-    message: 'Home',
+    message: "Home",
   });
 });
 
-app.use('/root', routes);
+app.use("/root", routes);
 
 function start(port) {
   app.listen(port, () => {
