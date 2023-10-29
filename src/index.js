@@ -9,8 +9,9 @@ start(port)
 
 
 
+
 db.sync().then(()=>{
-}).catch(console.error)
+}).catch(console.error("the Database not connected yet"))
 
 
 
